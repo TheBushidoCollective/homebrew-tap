@@ -4,54 +4,31 @@
 class Han < Formula
   desc "Sophisticated Claude Code Plugins with Superior Accuracy"
   homepage "https://han.guru"
-  version "1.27.2"
+  version "1.28.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/TheBushidoCollective/han/releases/download/v1.27.2/han-darwin-arm64"
-      sha256 "d60ca5b92155ab79e455c9606a016857cb9ec1e45819d02d921b50b86b1d035d"
-
-      resource "native_module" do
-        url "https://github.com/TheBushidoCollective/han/releases/download/v1.27.2/han-native.darwin-arm64.node"
-        sha256 "c1036c69e553a0ed92a8ea5821f5f74ddf14b592c5d6c2e5ae2c3b13f28df12e"
-      end
+      url "https://github.com/TheBushidoCollective/han/releases/download/v1.28.0/han-darwin-arm64"
+      sha256 "1996d4acb859d062c2df06ea01f28e49ef8ea4aa2aaf438146c19412475af1ac"
     else
-      url "https://github.com/TheBushidoCollective/han/releases/download/v1.27.2/han-darwin-x64"
-      sha256 "ab8de8a60edb9b05439bb32c14b0b4351878d7ee5895c799f75102bcb0a4d07e"
-
-      resource "native_module" do
-        url "https://github.com/TheBushidoCollective/han/releases/download/v1.27.2/han-native.darwin-x64.node"
-        sha256 "ff861ccf2afa4b1a25757f4677e2dda5b145ef8a45bc219c37d765d72e4d6063"
-      end
+      url "https://github.com/TheBushidoCollective/han/releases/download/v1.28.0/han-darwin-x64"
+      sha256 "f4ef77f9c1e391ff41ea0ceb4ddb18c6c6b9d1ebeb580d0ee7ddf6bab7dae416"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/TheBushidoCollective/han/releases/download/v1.27.2/han-linux-arm64"
-      sha256 "14e3ef52854276d5d18590e182258a971b6557a8dae6de2af87d0a0cebbc11e3"
-
-      resource "native_module" do
-        url "https://github.com/TheBushidoCollective/han/releases/download/v1.27.2/han-native.linux-arm64-gnu.node"
-        sha256 "521f2c158abe806d15b8d6d16057e4b6625ace858f1ea86a7ce2e5d017973765"
-      end
+      url "https://github.com/TheBushidoCollective/han/releases/download/v1.28.0/han-linux-arm64"
+      sha256 "d74c782ac5ace441a5c8a125befe68e4f1f7033be6df8dc63c0385795e9b2443"
     else
-      url "https://github.com/TheBushidoCollective/han/releases/download/v1.27.2/han-linux-x64"
-      sha256 "ad840288fde6804e6cdf21b17bf9ec2f1ca23bbe36547a81cbed0cffe3895f8f"
-
-      resource "native_module" do
-        url "https://github.com/TheBushidoCollective/han/releases/download/v1.27.2/han-native.linux-x64-gnu.node"
-        sha256 "22b9be1d847197c457ba6c4adc6cccfb01c20c2daa358a7a4854be841a8a1c59"
-      end
+      url "https://github.com/TheBushidoCollective/han/releases/download/v1.28.0/han-linux-x64"
+      sha256 "40d2938c92f9da8166b9eb664b066ea5e9458962003099d48cdf0370993591c0"
     end
   end
 
   def install
     bin.install Dir["han-*"].first => "han"
-    resource("native_module").stage do
-      bin.install Dir["*.node"].first => "han-native.node"
-    end
   end
 
   test do
