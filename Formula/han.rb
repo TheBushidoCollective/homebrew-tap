@@ -4,26 +4,26 @@
 class Han < Formula
   desc "Sophisticated Claude Code Plugins with Superior Accuracy"
   homepage "https://han.guru"
-  version "1.34.2"
+  version "1.34.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/TheBushidoCollective/han/releases/download/v1.34.2/han-darwin-arm64"
-      sha256 "eb410bc938c1d9d98f8ccee39bc8fe806ed3941a1782b4e0f56291129a69b887"
+      url "https://github.com/TheBushidoCollective/han/releases/download/v1.34.3/han-darwin-arm64"
+      sha256 "bb593359da0ff1cfe2e314c7d2aff58bf73b849fc780d3fe632dab503919e415"
     else
-      url "https://github.com/TheBushidoCollective/han/releases/download/v1.34.2/han-darwin-x64"
-      sha256 "73778938fe7bff6b08af6fe8eb8bd42f972c2f93711a0cedc8f194356eca125b"
+      url "https://github.com/TheBushidoCollective/han/releases/download/v1.34.3/han-darwin-x64"
+      sha256 "88d1b04bf7de351190426557a751ce3612a99afee62176283673aedd7e524f3a"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/TheBushidoCollective/han/releases/download/v1.34.2/han-linux-arm64"
-      sha256 "319f1d8c726e86ee00240d072db84cbc3f7f0d8b51ac229e1145fc19d8f991d5"
+      url "https://github.com/TheBushidoCollective/han/releases/download/v1.34.3/han-linux-arm64"
+      sha256 "31d2a104997592f6a9a95e52505902e4266ed521b301c049683054bf8b385058"
     else
-      url "https://github.com/TheBushidoCollective/han/releases/download/v1.34.2/han-linux-x64"
-      sha256 "578b8f2deddd6872b39a1f76fc61bff6ed22d5ef8fa8aefb4fd64782b5099e4d"
+      url "https://github.com/TheBushidoCollective/han/releases/download/v1.34.3/han-linux-x64"
+      sha256 "798b16736ace099212a4d096bd209bc1b2f3e0f675e404d681776e6b7ea89e56"
     end
   end
 
